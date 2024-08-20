@@ -3,6 +3,34 @@
 changed the template to get higher resolution and made krita go to full mode instead of canvas only. helps when you're trying to draw bigger stuff.
 also, thanks to https://github.com/librephoenix/org-krita/commits?author=librephoenix for help from their fork.
 
+** Here's a quickstart for this repo specifically
+The package is not on melpa yet. For installing, I would recommend downloading
+the release tarballs from [[https://github.com/lepisma/org-krita/releases][here]]. Or if you are using [[https://github.com/quelpa/quelpa-use-package][quelpa-use-package]], you can
+do the following:
+
+#+begin_src emacs-lisp
+  (use-package org-krita
+    :ensure t
+    :quelpa (org-krita :fetcher github :repo "kolmikk0/org-krita" :files ("*.el" "resources"))
+    :config
+    (add-hook 'org-mode-hook 'org-krita-mode))
+#+end_src
+
+Or, if you are using Doom emacs you can add this to your =packages.el=:
+#+begin_src emacs-lisp
+(package! org-krita
+  :recipe (:host github
+           :repo "kolmikk0/org-krita"
+           :files ("resources" "resources" "*.el" "*.el")))
+#+end_src
+
+=org-krita= creates a new org link type called =krita= that:
+- when clicked on, opens krita for editing the file linked, and
+- shows the updated image preview inline if call =org-display-inline-images=
+
+To create new files
+within the buffer itself, try calling =org-krita-insert-new-image=.
+
 ** fork of lepisma's org-krita package
 used `:image-data-fun` attribute of org-link-parameter instead of "bypassing org-mode's image display. This approach is used also by github.com/wdavew/org-excalidraw
 
