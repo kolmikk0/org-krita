@@ -161,7 +161,7 @@ If CANVASONLY-MODE is not null, run canvas only krita."
 ;;        (call-process org-krita-executable nil 0 nil "--canvasonly" "--nosplash" kra-path))
       (if canvasonly-mode
           (call-process org-krita-executable nil 0 nil "--canvasonly" "--nosplash" kra-path)
-        (call-process org-krita-executable nil 0 "--nosplash" nil kra-path))
+        (call-process org-krita-executable nil 0 nil "--nosplash" kra-path))
       (org-krita-add-watcher kra-path))))
 
 (defun org-krita-hide-link (link)
