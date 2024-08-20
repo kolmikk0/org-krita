@@ -1,6 +1,7 @@
 #+TITLE: org-krita
 ** fork of hermanhel's form of lepisma's org-krita package
 changed the template to get higher resolution and made krita go to full mode instead of canvas only. helps when you're trying to draw bigger stuff.
+also, thanks to https://github.com/librephoenix/org-krita/commits?author=librephoenix for help from their fork.
 
 ** fork of lepisma's org-krita package
 used `:image-data-fun` attribute of org-link-parameter instead of "bypassing org-mode's image display. This approach is used also by github.com/wdavew/org-excalidraw
